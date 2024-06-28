@@ -1,0 +1,42 @@
+import random
+print("-------------------------------")
+print(" Welcome to Mastermind Game")
+print("-------------------------------")
+print("\n")
+num=random.randrange(1000,10000)
+print(num)
+chances=5
+guess=int(input(f"Guess your 4 digit number, You have{chances} chances: "))
+if guess==num:
+    print("Great! you guess the number in just 1 try, You are a mastermind")
+else:
+    tries=0
+    while guess != num and chances:
+        tries+=1
+        chances-=1
+        guess=str(guess)
+        num=str(num)
+        rdigit=0  # rdigit means right digit number
+        correct= ['x']*4   
+        for i in range(0,4):
+            if guess[i]==num[i]:
+                rdigit+=1
+                correct[i]=num[i]
+        if (rdigit<4) and (rdigit>0) and chances:
+                print("Not the right guess, But you guess",rdigit,"number right")
+                print("Your guess correct status:")
+                for char in correct:
+                    print(char, end=' ')
+                print("\n")
+                print("\n")
+                guess=int(input(f"Guess your 4 digit number, You have{chances} chances: "))
+        elif rdigit==0 and chances:
+                print("None of the digit you guess is right")
+                guess=int(input(f"Guess your 4 digit number, You have{chances} chances: "))
+    if guess==num:
+        print("Great! you won in",tries,"tries guess now you a mastermind")
+    if chances==0:
+        print("Sorry you loss your chances")        
+                        
+          
+              
