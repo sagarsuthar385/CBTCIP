@@ -7,7 +7,7 @@ while True:
   num=random.randrange(1000,10000)
   print(num)
   chances=5
-  guess=int(input(f"Guess your 4 digit number, You have{chances} chances: "))
+  guess=int(input(f"Guess your 4 digit number, You have {chances} chances: "))
   if guess==num:
       print("Great! you guess the number in just 1 try, You are a mastermind")
   else:
@@ -30,16 +30,17 @@ while True:
                       print(char, end=' ')
                   print("\n")
                   print("\n")
-                  guess=int(input(f"Guess your 4 digit number, You have{chances} chances: "))
+                  guess=int(input(f"Guess your 4 digit number, You have {chances} chances: "))
           elif rdigit==0 and chances:
                   print("None of the digit you guess is right")
-                  guess=int(input(f"Guess your 4 digit number, You have{chances} chances: "))
+                  guess=int(input(f"Guess your 4 digit number, You have {chances} chances: "))
       if guess==num:
           print("Great! you won in",tries,"tries guess now you a mastermind")
       if chances==0:
           print("Sorry you loss your chances")        
   print(":------------------------------:")
   print("    :------Game Over-----:")
+  print("\n")
   play_again=input("play again(y/n)= ")
   if play_again.lower()!="y":
         break                              
