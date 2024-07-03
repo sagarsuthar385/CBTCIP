@@ -1,0 +1,11 @@
+import sounddevice
+from scipy.io.wavfile import write
+import wavio as wv
+
+fs=44100
+second=int(input("Enter the duration of your audio= "))
+print("Audio recording started....")
+rv=sounddevice.rec(second*fs,samplerate=fs,channels=2)
+sounddevice.wait()
+write('audio.wv',fs,rv)
+print("Your record is finished...")
